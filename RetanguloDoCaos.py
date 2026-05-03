@@ -29,6 +29,12 @@ def ler_pontos():
     print("Digite as Dimensôes do Retângulo (Aceito Valores de -1.0 a 1.0)")
     largura = float(input("Digite a largura do retângulo: "))
     altura = float(input("Digite a altura do retângulo: "))
+
+    if largura <= -1.0 or largura >= 1.0 or altura <= -1.0 or altura >= 1.0:
+        print("Valores inválidos! Por favor, insira valores entre -1.0 e 1.0.")
+        return ler_pontos()
+
+    
     return largura, altura
 
 largura, altura = ler_pontos()
