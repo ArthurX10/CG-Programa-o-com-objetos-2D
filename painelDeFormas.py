@@ -3,8 +3,6 @@ import OpenGL.GLUT as glut
 import numpy as np
 
 
-
-
 def display():
     glut.glutSwapBuffers()
     # desenhar 4 formas (quadrado, triangulo, circulo e +1) cores variadas 
@@ -23,7 +21,6 @@ def display():
     gl.glEnd()
     
 
-
     #Triangulo 
     gl.glBegin(gl.GL_TRIANGLES)
     gl.glColor3f(0.0,1.0,0.0)
@@ -32,9 +29,6 @@ def display():
     gl.glVertex2f(0.8, -0.8)
 
     gl.glEnd()
-
-
-
 
 
     #Circulo 
@@ -54,6 +48,8 @@ def display():
     gl.glEnd()
 
 
+
+    #Trapezio
     gl.glBegin(gl.GL_QUADS)
     gl.glColor3f(1.0,1.0,0.0)
     gl.glVertex2f(-0.5, -0.1)

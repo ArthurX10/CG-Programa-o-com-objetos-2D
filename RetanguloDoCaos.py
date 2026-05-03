@@ -42,10 +42,7 @@ def display():
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
     gl.glBegin(gl.GL_QUADS)
 
-    #glColor3f(red, green, blue);
-    
-    
-    #Função para definir o vertice do retângulo, no plano cartesiano
+    #glColor3f(red, green, blue)
     
     # vértices do retângulo
     gl.glColor3f(numero1, numero2, numero3)
