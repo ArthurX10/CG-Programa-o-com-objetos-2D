@@ -1,5 +1,4 @@
 import OpenGL.GL as gl
-import OpenGL.GL as gl
 import OpenGL.GLUT as glut
 import random 
 
@@ -63,7 +62,7 @@ def display():
 glut.glutInit()  # inicializa o GLUT
 glut.glutInitDisplayMode(glut.GLUT_SINGLE | glut.GLUT_RGB)  # define o modo de exibição da janela
 glut.glutCreateWindow(b'Retangulo do Caos')  # cria a janela com o título especificado
-glut.glutReshapeWindow(800,600)  # ajusta o tamanho da janela para 800x600 pixels
+glut.glutReshapeWindow(800,800)  # ajusta o tamanho da janela para 800x600 pixels
 
 glut.glutKeyboardFunc(pegar_tecla)  # registra a função de teclado
 glut.glutDisplayFunc(display)  # registra a função de desenho
