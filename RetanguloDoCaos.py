@@ -5,24 +5,25 @@ import random
 espaco_pressionado = False
 numero1 = 1
 numero2 = 0
-numero3 = 0
-x = ""
-y = ""
+numero3 = 0 
+numeroFundo1 = 0.3
+numeroFundo2 = 0.3
+numeroFundo3 = 0.3
+
+def cor_random():
+    return random.random() 
 
 def pegar_tecla(key, x, y):
-    global espaco_pressionado
-    global numero1
-    global numero2
-    global numero3
-    print(x, y)
+    global numero1, numero2, numero3
+    global numeroFundo1, numeroFundo2, numeroFundo3
 
     if key == b' ':
-        espaco_pressionado = True
-        numero1 = random.randint(0, 100) / 100
-        numero2 = random.randint(0, 100) / 100
-        numero3 = random.randint(0, 100) / 100
-    print(numero1, numero2, numero3)
-   
+        numero1 = cor_random()
+        numero2 = cor_random()
+        numero3 = cor_random()
+        numeroFundo1 = cor_random()
+        numeroFundo2 = cor_random()
+        numeroFundo3 = cor_random()   
 
     
     glut.glutPostRedisplay();
@@ -43,8 +44,14 @@ def ler_pontos():
 largura, altura = ler_pontos()
 
 def display():
+
+    gl.glClearColor(numeroFundo1, numeroFundo2, numeroFundo3, 1.0)
+
+
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
     gl.glBegin(gl.GL_QUADS)
+
+    
     
     # vértices do retângulo
     gl.glColor3f(numero1, numero2, numero3)
