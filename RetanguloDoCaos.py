@@ -6,12 +6,15 @@ espaco_pressionado = False
 numero1 = 1
 numero2 = 0
 numero3 = 0
+x = ""
+y = ""
 
 def pegar_tecla(key, x, y):
     global espaco_pressionado
     global numero1
     global numero2
     global numero3
+    print(x, y)
 
     if key == b' ':
         espaco_pressionado = True
@@ -19,6 +22,7 @@ def pegar_tecla(key, x, y):
         numero2 = random.randint(0, 100) / 100
         numero3 = random.randint(0, 100) / 100
     print(numero1, numero2, numero3)
+   
 
     
     glut.glutPostRedisplay();
@@ -41,8 +45,6 @@ largura, altura = ler_pontos()
 def display():
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
     gl.glBegin(gl.GL_QUADS)
-
-    #glColor3f(red, green, blue)
     
     # vértices do retângulo
     gl.glColor3f(numero1, numero2, numero3)
