@@ -14,7 +14,6 @@ base, altura = ler_pontos()
 
 def desenhar_triangulo(base, altura, cor,cx = 0.0, cy=0.0):
     gl.glBegin(gl.GL_TRIANGLES)
-    gl.glColor3f(1.0, 0.0, 0.0)
 
     gl.glColor3f(*cor) 
     gl.glVertex2f(cx, cy + altura)
