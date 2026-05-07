@@ -10,66 +10,42 @@ def gerar_cor():
    return [random.random(), random.random(), random.random()]
 
 
-def retangulo(x1, y1, x2, y2):
-
-    gl.glBegin(gl.GL_QUADS)
-    gl.glVertex2f(x1, y1)
-    gl.glVertex2f(x1, y2)
-    gl.glVertex2f(x2, y2)
-    gl.glVertex2f(x2, y1)
-
-    gl.glEnd()
-
-
-def triangulo(x1, y1, x2, y2, x3, y3):
-
-    gl.glBegin(gl.GL_TRIANGLES)
-    gl.glVertex2f(x1, y1)
-    gl.glVertex2f(x2, y2)
-    gl.glVertex2f(x3, y3)
-    gl.glEnd()
-
-
-def desenharVasco():
+def desenharInsignia():
 
     gl.glColor3f(*cor)
-    retangulo(-0.08, 0.0, 0.08, 0.45)
+    gl.glBegin(gl.GL_QUADS)
 
-    triangulo(
-        -0.08, 0.45,
-         0.08, 0.45,
-         0.0, 0.75
-    )
+    #Quadrado A
+    gl.glVertex2f(-0.3, 0.7)
+    gl.glVertex2f(0.0, 0.0)
+    gl.glVertex2f(0.3, 0.7)
+    gl.glVertex2f(0.0, 0.5)
+    
+    
+    #Quadrado B
+    gl.glVertex2f(-0.7, 0.3)
+    gl.glVertex2f(0.0, 0.0)
+    gl.glVertex2f(-0.7, -0.3)
+    gl.glVertex2f(-0.5, 0.0)
+   
+   #Quadrado C
+    gl.glVertex2f(0.3, -0.7)
+    gl.glVertex2f(0.0, 0.0)
+    gl.glVertex2f(-0.3, -0.7)
+    gl.glVertex2f(0.0, -0.5)
 
-    # Braço inferior
-    retangulo(-0.08, -0.45, 0.08, 0.0)
 
-    triangulo(
-        -0.08, -0.45,
-         0.08, -0.45,
-         0.0, -0.75
-    )
+    #Quadrado D
+    gl.glVertex2f(0.7, -0.3)
+    gl.glVertex2f(0.0, 0.0)
+    gl.glVertex2f(0.7, 0.3)
+    gl.glVertex2f(0.5, 0.0)
 
-    # Braço esquerdo
-    retangulo(-0.45, -0.08, 0.0, 0.08)
-    triangulo(
-        -0.45, -0.08,
-        -0.45, 0.08,
-        -0.75, 0.0
-    )
-
-    # Braço direito
-    retangulo(0.0, -0.08, 0.45, 0.08)
-
-    triangulo(
-         0.45, -0.08,
-         0.45, 0.08,
-         0.75, 0.0
-    )
-
+    gl.glEnd()
+    gl.glFlush()
+    
 
 def pegar_tecla(tecla, x, y):
-
     tecla = tecla.decode("utf-8").lower()
 
     if tecla == 'c':
@@ -82,8 +58,7 @@ def display():
 
     gl.glClearColor(0.0, 0.0, 0.0, 1.0)
     gl.glClear(gl.GL_COLOR_BUFFER_BIT)
-    desenharVasco()
-
+    desenharInsignia()
     glut.glutSwapBuffers()
 
 

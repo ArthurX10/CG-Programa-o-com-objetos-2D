@@ -41,7 +41,6 @@ def desenhar_circulo(x, y, raio):
 
     gl.glBegin(gl.GL_TRIANGLE_FAN)
     gl.glVertex2f(x, y)
-
     for i in range(segmentos + 1):
         angulo = 2 * math.pi * i / segmentos
         px = x + math.cos(angulo) * raio
@@ -56,24 +55,17 @@ def desenhar_constelacao():
 
     # linhas
     gl.glColor3f(0.7, 0.7, 0.7)
-
     gl.glLineWidth(2)
-
     gl.glBegin(gl.GL_LINES)
-
     for i in range(len(constelacao) - 1):
-
         gl.glVertex2f(constelacao[i].x, constelacao[i].y)
-
         gl.glVertex2f(constelacao[i + 1].x, constelacao[i + 1].y)
 
     gl.glEnd()
 
     # estrelas
     for estrela in constelacao:
-
         gl.glColor3f(*estrela.cor)
-
         desenhar_circulo(
             estrela.x,
             estrela.y,
@@ -85,7 +77,6 @@ def reiniciar_constelacao():
 
     global constelacao
     constelacao = [Estrela() for _ in range(7)]
-
     if modo_noturno:
         for estrela in constelacao:
             estrela.modo_noturno(True)
