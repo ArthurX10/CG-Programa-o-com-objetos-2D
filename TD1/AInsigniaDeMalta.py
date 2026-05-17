@@ -2,40 +2,35 @@ import OpenGL.GL as gl
 import OpenGL.GLUT as glut
 import random
 
-
 cor = [1.0, 0.0, 0.0]
-
 
 def gerar_cor():
    return [random.random(), random.random(), random.random()]
-
 
 def desenharInsignia():
 
     gl.glColor3f(*cor)
     gl.glBegin(gl.GL_QUADS)
 
-    #Quadrado A
+    #CRUZ A
     gl.glVertex2f(-0.3, 0.7)
     gl.glVertex2f(0.0, 0.0)
     gl.glVertex2f(0.3, 0.7)
     gl.glVertex2f(0.0, 0.5)
     
-    
-    #Quadrado B
+    #CRUZ B
     gl.glVertex2f(-0.7, 0.3)
     gl.glVertex2f(0.0, 0.0)
     gl.glVertex2f(-0.7, -0.3)
     gl.glVertex2f(-0.5, 0.0)
    
-   #Quadrado C
+   #CRUZ C
     gl.glVertex2f(0.3, -0.7)
     gl.glVertex2f(0.0, 0.0)
     gl.glVertex2f(-0.3, -0.7)
     gl.glVertex2f(0.0, -0.5)
 
-
-    #Quadrado D
+    #CRUZ D
     gl.glVertex2f(0.7, -0.3)
     gl.glVertex2f(0.0, 0.0)
     gl.glVertex2f(0.7, 0.3)
